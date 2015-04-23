@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['i.petuh@icloud.com']
   spec.summary       = %q{OSRM API}
   spec.description   = ''
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/ikantam/osrm-api'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', "~> 1.7"
-  spec.add_development_dependency 'rake', "~> 10.0"
+  spec.add_development_dependency 'bundler', '~> 1.7'
+  spec.add_development_dependency 'rake', '~> 10.0'
 end

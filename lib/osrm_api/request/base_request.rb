@@ -3,16 +3,21 @@ module OSRM
   module Request
     class BaseRequest
 
-      LOC_PARAM = 'loc'.freeze
+      LOC_PARAM = :loc
 
+      # Contains service path
+      # @return [Symbol]
       def service
         raise 'Specify the PATH to the Service'
       end
 
+      # Contains default parameters for specially API request
+      # @return [Hash]
       def default_params
         @default_params ||= {}
       end
 
+      # @return [Array]
       def params
         @params ||= []
       end
@@ -21,6 +26,10 @@ module OSRM
         params << [key, value]
       end
 
+
+      # @param [String] host
+      # @param [Fixnum] port
+      # @return [URI]
       def build_uri(host, port)
         URI::HTTP.build(
             host: host,

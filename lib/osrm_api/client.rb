@@ -7,6 +7,12 @@ require 'osrm_api/response/route_object'
 require 'osrm_api/request/locate_request'
 require 'osrm_api/response/locate_object'
 
+require 'osrm_api/request/distance_request'
+require 'osrm_api/response/distance_object'
+
+require 'osrm_api/request/nearest_request'
+require 'osrm_api/response/nearest_object'
+
 
 module OSRM
 
@@ -14,7 +20,7 @@ module OSRM
 
     DEFAULT_OPTIONS = {
       host: 'localhost',
-      port: '5000',
+      port: 5000,
     }.freeze
 
     # @return [OSRM::Client]
@@ -51,9 +57,10 @@ module OSRM
       Response::NearestObject.new execute request
     end
 
+    # Return casting <Response::DistanceObject>
     # @param [Array] locations
     # @return [Response::DistanceObject]
-    def distance_matrix(*locations)
+    def distance(*locations)
       request = Request::DistanceRequest.new(*locations)
       if block_given?
         yield
@@ -63,7 +70,7 @@ module OSRM
 
 
     private
-
+    # Method performs given request and returns body response
     # @param [OSRM::Request::BaseRequest] request
     def execute(request)
       res = Net::HTTP.get_response(request.build_uri @options[:host], @options[:port])

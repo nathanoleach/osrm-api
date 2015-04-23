@@ -9,7 +9,7 @@ module OSRM
       end
 
       def service
-        :distance
+        :table
       end
     end
   end

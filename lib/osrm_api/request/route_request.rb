@@ -3,8 +3,10 @@ module OSRM
   module Request
     class RouteRequest < BaseRequest
 
-      OUTPUT_PARAM = 'output'.freeze
-      ALT_PARAM = 'alt'.freeze
+      OUTPUT_PARAM = :output
+      ALT_PARAM = :alt
+      Z_PARAM = :z
+      GEO_PARAM = :geometry
 
       def service
         :viaroute
