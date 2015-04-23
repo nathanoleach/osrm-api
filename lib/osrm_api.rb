@@ -1,5 +1,6 @@
-require "osrm_api/version"
+require 'osrm_api/version'
+require 'osrm_api/client'
 
-module OsrmApi
-  # Your code goes here...
+module OSRM
+
 end

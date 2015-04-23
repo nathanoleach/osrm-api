@@ -1,3 +1,3 @@
-module OsrmApi
-  VERSION = "0.0.1"
+module OSRM
+  VERSION = '0.0.1'
 end
