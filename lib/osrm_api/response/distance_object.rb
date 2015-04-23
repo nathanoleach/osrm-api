@@ -1,0 +1,2 @@
+class DistanceObject
+end

@@ -1,0 +1,2 @@
+class LocateObject
+end
