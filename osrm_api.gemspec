@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = OSRM::VERSION
   spec.authors       = ['IgorPetuh']
   spec.email         = ['i.petuh@icloud.com']
-  spec.summary       = %q{OSRM API}
+  spec.summary       = 'OSRM API'
   spec.description   = ''
   spec.homepage      = 'https://github.com/ikantam/osrm-api'
   spec.license       = 'MIT'

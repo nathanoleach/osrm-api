@@ -1,8 +1,8 @@
 require 'osrm_api/request/base_request'
 module OSRM
   module Request
+    # :nodoc
     class RouteRequest < BaseRequest
-
       OUTPUT_PARAM = :output
       ALT_PARAM = :alt
       Z_PARAM = :z
@@ -14,14 +14,14 @@ module OSRM
 
       def default_params
         @default_params ||= {
-            OUTPUT_PARAM => :json,
-            ALT_PARAM => :false,
+          OUTPUT_PARAM => :json,
+          ALT_PARAM => :false
         }
       end
 
       def initialize(*locations)
         locations = locations.compact.reject(&:empty?)
-        locations.each_with_index { |item, _key| add_param LOC_PARAM, item.split.join }
+        locations.each { |item|  add_param LOC_PARAM, item.split.join }
       end
     end
   end

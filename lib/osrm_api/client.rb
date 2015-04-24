@@ -13,14 +13,12 @@ require 'osrm_api/response/distance_object'
 require 'osrm_api/request/nearest_request'
 require 'osrm_api/response/nearest_object'
 
-
 module OSRM
-
+  # :nodoc
   class Client
-
     DEFAULT_OPTIONS = {
       host: 'localhost',
-      port: 5000,
+      port: 5000
     }.freeze
 
     # @return [OSRM::Client]
@@ -28,32 +26,24 @@ module OSRM
       @options = DEFAULT_OPTIONS.merge(options)
     end
 
-
     # @return [Response::LocateObject]
     def locate(location)
       request = Request::LocateRequest.new(location)
-      if block_given?
-        yield
-      end
+      request = yield request if block_given?
       Response::LocateObject.new execute request
     end
-
 
     # @return [Response::RouteObject]
     def route(*locations)
       request = Request::RouteRequest.new(*locations)
-      if block_given?
-        yield
-      end
+      yield request if block_given?
       Response::RouteObject.new execute request
     end
 
     # @return [Response::NearestObject]
     def nearest(location)
       request = Request::NearestRequest.new(location)
-      if block_given?
-        yield
-      end
+      yield request if block_given?
       Response::NearestObject.new execute request
     end
 
@@ -62,19 +52,17 @@ module OSRM
     # @return [Response::DistanceObject]
     def distance(*locations)
       request = Request::DistanceRequest.new(*locations)
-      if block_given?
-        yield
-      end
+      yield request if block_given?
       Response::DistanceObject.new execute request
     end
 
-
     private
+
     # Method performs given request and returns body response
     # @param [OSRM::Request::BaseRequest] request
     def execute(request)
-      res = Net::HTTP.get_response(request.build_uri @options[:host], @options[:port])
-
+      uri = request.build_uri @options[:host], @options[:port]
+      res = Net::HTTP.get_response uri
       JSON.parse(res.body)
     end
   end

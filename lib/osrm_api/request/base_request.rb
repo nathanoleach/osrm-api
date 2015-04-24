@@ -1,14 +1,14 @@
 require 'uri/https'
 module OSRM
   module Request
+    # :nodoc
     class BaseRequest
-
       LOC_PARAM = :loc
 
       # Contains service path
       # @return [Symbol]
       def service
-        raise 'Specify the PATH to the Service'
+        fail 'Specify the PATH to the Service'
       end
 
       # Contains default parameters for specially API request
@@ -26,7 +26,6 @@ module OSRM
         params << [key, value]
       end
 
-
       # @param [String] host
       # @param [Fixnum] port
       # @return [URI]
@@ -35,10 +34,10 @@ module OSRM
             host: host,
             port: port.to_i,
             path: "/#{service}",
-            query: URI.encode_www_form(params + default_params.map { |key, item| [key, item] })
+            query: URI.encode_www_form(params +
+                       default_params.map { |key, item| [key, item] })
         )
       end
-
     end
   end
 end
