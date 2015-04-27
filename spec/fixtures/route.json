@@ -1,0 +1,54 @@
+{
+  "hint_data": {
+    "locations": [
+      "wQ0NACgfGAAAAAAABQAAAAAAAAA5AAAAAAAAAOCbCAAAAAAATrJyAoeHt_sDABEA",
+      "hjYYAIg2GADefQEAAAAAALMAAAAAAAAAZAgAAFMNDAAAAAAA-bJqAiTnl_sAABEA"
+    ],
+    "checksum": 361082431
+  },
+  "status_message": "Found route between points",
+  "route_summary": {
+    "end_point": "Fishermem's Way",
+    "start_point": "",
+    "total_time": 9572,
+    "total_distance": 193078
+  },
+  "found_alternative": true,
+  "alternative_summaries": [
+    {
+      "end_point": "Fishermem's Way",
+      "start_point": "",
+      "total_time": 10015,
+      "total_distance": 206532
+    }
+  ],
+  "via_points": [
+    [
+      41.071182,
+      -71.858299
+    ],
+    [
+      40.547066,
+      -73.930977
+    ]
+  ],
+  "status": 0,
+  "via_indices": [
+    0,
+    2173
+  ],
+  "alternative_indices": [
+    0,
+    2407
+  ],
+  "alternative_names": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "route_name": [
+    "",
+    ""
+  ]
+}
