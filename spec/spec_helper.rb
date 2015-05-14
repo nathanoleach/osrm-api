@@ -6,6 +6,9 @@ require 'webmock/rspec'
 require 'json'
 require 'osrm_api'
 
+require 'coveralls'
+Coveralls.wear!
+
 def fixture_path
   File.expand_path('../fixtures', __FILE__)
 end
