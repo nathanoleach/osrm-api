@@ -2,6 +2,8 @@
 
 This Gem provides interaction with [OSRM Server API](https://github.com/Project-OSRM/osrm-backend/wiki/Server-api)
  
+ [![Gem Version](https://badge.fury.io/rb/osrm_api.svg)](http://badge.fury.io/rb/osrm_api)
+ [![Coverage Status](https://coveralls.io/repos/igorpetuh/osrm-api/badge.svg)](https://coveralls.io/r/igorpetuh/osrm-api)
 
 ## Installation
 

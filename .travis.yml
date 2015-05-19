@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - ruby-2.0.0-p598
+branches:
+  only: master
+notifications:
+  email: false
