@@ -1,0 +1,5 @@
+http://router.project-osrm.org:443/table?loc=40.723279%2C-73.937766&loc=40.90%2C-73.10&loc=40.82279%2C-73.937766
+
+http://router.project-osrm.org/table/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219
+
+http://router.project-osrm.org/table/v1/driving/40.723279,-73.937766;40.90,-73.10;40.82279,-73.937766
